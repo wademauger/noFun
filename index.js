@@ -4,20 +4,39 @@ function noFun() {
   this.KAYLA = "NOT FUN";
   this.FUN = "NOT KAYLA";
 
-  this.isFun = function(notKayla){
+  this.isFun = function(notKayla) {
     return notKayla.toLowerCase() !== "kayla";
   }
 
-  this.isNotFun = function(Kayla){
+  this.isNotFun = function(Kayla) {
     return !this.isFun(Kayla);
   }
 
-  Array.prototype.hasFun = function(){
-    return !(this.filter(function(val){
-      return val.toLowerCase() === "kayla";
-    })).length > 0;
+  String.prototype.hasFun = function() {
+    return this.toLowerCase().indexOf('kayla') === -1;
   }
 
+  Array.prototype.hasFun = function () {
+    return !this.find(function(el) {
+      if (typeof el === 'string' || typeof el === 'object') {
+        return !el.hasFun();
+      } else {
+        return false;
+      }
+    }, this);
+  }
+
+  Object.prototype.hasFun = function() {
+    return !Object.keys(this).find(function(el) {
+      if (!el.hasFun()) {
+        return true;
+      } else if (typeof this[el] === 'string' || typeof this[el] === 'object') {
+        return !this[el].hasFun();
+      } else {
+        return false;
+      }
+    }, this);
+  }
 }
 
 module.exports = new noFun();
