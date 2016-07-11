@@ -28,6 +28,10 @@ function noFun() {
     return this.name.toLowerCase().hasFun();
   }
 
+  RegExp.prototype.hasFun = function() {
+    return this.toString().toLowerCase().hasFun();
+  }
+
 
   //returns true iff 'kayla' is not inside
   String.prototype.hasFun = function() {
