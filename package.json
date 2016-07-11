@@ -1,11 +1,11 @@
 {
   "name": "nofun",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Who is no fun?",
   "main": "index.js",
   "repository": "https://github.com/wadeanthony0100/noFun",
   "scripts": {
-    "test": "node test.js"
+    "test": "istanbul cover test.js && rm -rf coverage"
   },
   "keywords": [
     "no",
@@ -19,5 +19,8 @@
   "license": "MIT",
   "devDependencies": {
     "jasmine": "^2.4.1"
+  },
+  "dependencies": {
+    "istanbul": "^0.4.4"
   }
 }
