@@ -5,15 +5,19 @@
   "main": "index.js",
   "repository": "https://github.com/wadeanthony0100/noFun",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "keywords": [
     "no",
     "fun",
     "kayla",
-    "does",                                                                                                                                                                                   "not do",
+    "does",
+    "not do",
     "meth"
   ],
   "author": "Dylan Vuz, Wade Mauger",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^2.4.1"
+  }
 }
