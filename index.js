@@ -45,7 +45,7 @@ function noFun() {
     }, this);
   }
 
-  //returns true iff 'layla' is not therein
+  //returns true iff 'kayla' is not therein
   Object.prototype.hasFun = function() {
     return !Object.keys(this).find(function(el) {
       if ( typeof el === 'undefined' || el === null) {
