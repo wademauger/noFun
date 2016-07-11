@@ -76,8 +76,27 @@ describe('noFun\'s hasFun() Array enhancement', function(){
   });
 });
 
-//describe('noFun\'s hasFun() Object enhancement', function(){
-//  
-//});
+describe('noFun\'s hasFun() Object enhancement', function(){
+  it('should return false if \'kayla\' is anywhere in an object', function(){
+    let swag = {kayla: 'isn\'t fun'};
+    let yolo = {notAnyFun: 'Kayla'};
+    let neat = {hasNoFun: ['has', 'to', 'be', 'kayla']};
+    let meme = {doesntHaveFun: {whois: 'KAYLA'}};
+    expect(swag.hasFun()).toBe(false);
+    expect(yolo.hasFun()).toBe(false);
+    expect(neat.hasFun()).toBe(false);
+    expect(meme.hasFun()).toBe(false);
+  });
+  it('should return true if an object has no reference to any \'kayla\'', function(){
+    let swag = {timbrook: 'is fun'};
+    let yolo = {tonsOfFun: 'Timbrook'};
+    let neat = {hasSoMuchFun: ['has', 'to', 'be', 'Tim', ' ', 'Brook']};
+    let meme = {doesntNotHaveFun: {whois: 'TIMBROOK'}};
+    expect(swag.hasFun()).toBe(true);
+    expect(yolo.hasFun()).toBe(true);
+    expect(neat.hasFun()).toBe(true);
+    expect(meme.hasFun()).toBe(true);
+  });
+});
 
 jasmine.execute();
