@@ -12,6 +12,11 @@ function noFun() {
     return !this.isFun(Kayla);
   }
 
+  //return false
+  Number.prototype.hasFun = function() {
+    return true;
+  }
+
   //returns true iff 'kayla' is not inside
   String.prototype.hasFun = function() {
     return this.toLowerCase().indexOf('kayla') === -1;
@@ -20,11 +25,7 @@ function noFun() {
   //returns true iff 'kayla' is nowhere in the Array
   Array.prototype.hasFun = function () {
     return !this.find(function(el) {
-      if (typeof el === 'string' || typeof el === 'object') {
-        return !el.hasFun();
-      } else {
-        return false;
-      }
+      return !el.hasFun();
     }, this);
   }
 
@@ -33,10 +34,8 @@ function noFun() {
     return !Object.keys(this).find(function(el) {
       if (!el.hasFun()) {
         return true;
-      } else if (typeof this[el] === 'string' || typeof this[el] === 'object') {
-        return !this[el].hasFun();
       } else {
-        return false;
+        return !this[el].hasFun();
       }
     }, this);
   }
