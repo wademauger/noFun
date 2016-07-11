@@ -1,8 +1,10 @@
 # noFun (.js)
 
+(Now with 92% code coverage!)
+
 ## The essential package for identifying the absence of fun.
 
-Have you ever wondered, "Who is no fun"? `npm install nofun`, and find out the answer.
+Have you ever wondered, "Who is no fun" ? `npm install nofun`, and find out..
 
 ## Where will `noFun` run?
 
@@ -44,3 +46,5 @@ console.log(swag.hasFun());
 // prints false
 console.log(meme.hasFun());
 ```
+
+## More coming soon!
