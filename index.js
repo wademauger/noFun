@@ -12,10 +12,22 @@ function noFun() {
     return !this.isFun(Kayla);
   }
 
-  //return false
+  Symbol.prototype.hasFun = function() {
+    return true;
+  }
+  
+  Boolean.prototype.hasFun = function() {
+    return true;
+  }
+
   Number.prototype.hasFun = function() {
     return true;
   }
+
+  Function.prototype.hasFun = function() {
+    return this.name.toLowerCase().hasFun();
+  }
+
 
   //returns true iff 'kayla' is not inside
   String.prototype.hasFun = function() {
@@ -25,15 +37,23 @@ function noFun() {
   //returns true iff 'kayla' is nowhere in the Array
   Array.prototype.hasFun = function () {
     return !this.find(function(el) {
-      return !el.hasFun();
+      if ( typeof el === 'undefined' || el === null) {
+        return false;
+      } else {
+        return !el.hasFun();
+      }
     }, this);
   }
 
   //returns true iff 'layla' is not therein
   Object.prototype.hasFun = function() {
     return !Object.keys(this).find(function(el) {
-      if (!el.hasFun()) {
+      if ( typeof el === 'undefined' || el === null) {
+        return false;
+      } else if (!el.hasFun()) {
         return true;
+      } else if ( typeof this[el] === 'undefined' || this[el] === null) {
+        return false;
       } else {
         return !this[el].hasFun();
       }
