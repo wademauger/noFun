@@ -1,15 +1,18 @@
 {
   "name": "nofun",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Who is no fun?",
   "main": "index.js",
+  "repository": "https://github.com/wadeanthony0100/noFun",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "no",
     "fun",
-    "kayla"
+    "kayla",
+    "does",                                                                                                                                                                                   "not do",
+    "meth"
   ],
   "author": "Dylan Vuz, Wade Mauger",
   "license": "MIT"
