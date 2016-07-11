@@ -1,12 +1,10 @@
 function noFun() {
   this.KAYLA = "NOT FUN";
   this.FUN = "NOT KAYLA";
-
+  this.isFun = function(notKayla) {
+    return notKayla.toLowerCase() !== "kayla";
+  }
   console.log("Kayla is not fun");
 }
 
-noFun.prototype.isFun = function(notKayla) {
-  return notKayla.toLowerCase() !== "kayla";
-}
-
-module.exports = noFun;
+module.exports = new noFun();
