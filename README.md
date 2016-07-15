@@ -1,6 +1,6 @@
 # noFun (.js)
 
-(Now with 92% code coverage!)
+(Now with 100% code coverage!)
 
 ## The essential package for identifying the absence of fun.
 

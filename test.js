@@ -68,6 +68,7 @@ describe('noFun\'s hasFun() Array enhancement', function(){
     expect(['Tim', ' ', 'Brook'].hasFun()).toBe(true);
     expect(['Vice', 'President'].hasFun()).toBe(true);
     expect(['Michael', 'Timbrook'].hasFun()).toBe(true);
+    expect(['Michael', null, 'Timbrook'].hasFun()).toBe(true);
   });
   it('should return false if there are one or more \'kayla\'s in an Array', function(){
     expect(['President', 'Kayla'].hasFun()).toBe(false);
@@ -82,20 +83,63 @@ describe('noFun\'s hasFun() Object enhancement', function(){
     let yolo = {notAnyFun: 'Kayla'};
     let neat = {hasNoFun: ['has', 'to', 'be', 'kayla']};
     let meme = {doesntHaveFun: {whois: 'KAYLA'}};
+    let sweg = {whois: 'KAYLA', testCase: null};
     expect(swag.hasFun()).toBe(false);
     expect(yolo.hasFun()).toBe(false);
     expect(neat.hasFun()).toBe(false);
     expect(meme.hasFun()).toBe(false);
+    expect(sweg.hasFun()).toBe(false);
   });
   it('should return true if an object has no reference to any \'kayla\'', function(){
     let swag = {timbrook: 'is fun'};
     let yolo = {tonsOfFun: 'Timbrook'};
     let neat = {hasSoMuchFun: ['has', 'to', 'be', 'Tim', ' ', 'Brook']};
     let meme = {doesntNotHaveFun: {whois: 'TIMBROOK'}};
+    let sweg = {whois: 'TIMBROOK', testCase: null};
     expect(swag.hasFun()).toBe(true);
     expect(yolo.hasFun()).toBe(true);
     expect(neat.hasFun()).toBe(true);
     expect(meme.hasFun()).toBe(true);
+    expect(sweg.hasFun()).toBe(true);
+  });
+});
+
+describe('noFun\'s hasFun() Symbol enhancement', function(){
+  it('should always return true', function(){
+    let mySym = Symbol();
+    expect(mySym.hasFun()).toBe(true);
+  });
+});
+
+describe('noFun\'s hasFun() Boolean enhancement', function(){
+  it('should always return true', function(){
+    let memes = true;
+    expect(memes.hasFun()).toBe(true);
+  });
+});
+
+describe('noFun\'s hasFun() Number enhancement', function(){
+  it('should always return true', function(){
+    let memes = 1;
+    expect(memes.hasFun()).toBe(true);
+  });
+});
+
+describe('noFun\'s hasFun() Function enhancement', function(){
+  it('should return true iff the function identifier is not \'Kayla\'', function(){
+    let memes = function(){};
+    expect(memes.hasFun()).toBe(true);
+  });
+  it('should return false iff the function identifier is \'Kayla\'', function(){
+    function kayla(){};
+    expect(kayla.hasFun()).toBe(false);
+  });
+});
+
+describe('noFun\'s hasFun() Regex(p) enhancement', function(){
+  it('should return true', function(){
+    let memes = new RegExp();
+    expect(memes.hasFun()).toBe(true);
   });
 });
 

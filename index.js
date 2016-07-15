@@ -52,9 +52,7 @@ function noFun() {
   //returns true iff 'kayla' is not therein
   Object.prototype.hasFun = function() {
     return !Object.keys(this).find(function(el) {
-      if ( typeof el === 'undefined' || el === null) {
-        return false;
-      } else if (!el.hasFun()) {
+      if (!el.hasFun()) {
         return true;
       } else if ( typeof this[el] === 'undefined' || this[el] === null) {
         return false;
