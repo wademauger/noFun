@@ -47,4 +47,11 @@ console.log(swag.hasFun());
 console.log(meme.hasFun());
 ```
 
+## Development
+
+- `git clone`
+- `npm i`
+- Sources are in index.js.
+- Tests are in test.js. Run tests with `npm test`
+
 ## More coming soon!

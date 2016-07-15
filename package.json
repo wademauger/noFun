@@ -11,15 +11,14 @@
     "no",
     "fun",
     "kayla",
-    "does",                                                                                                                                                                                 "not do",
+    "does",                                                                                                                                                                                     "not do",
     "meth"
   ],
   "author": "Dylan Vuz, Wade Mauger",
   "license": "MIT",
   "devDependencies": {
-    "jasmine": "^2.4.1"
-  },
-  "dependencies": {
-    "istanbul": "^0.4.4"
+    "istanbul": "^0.4.4",
+    "jasmine": "^2.4.1",
+    "jquery": "^3.1.0"
   }
 }
